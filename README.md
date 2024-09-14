@@ -15,7 +15,7 @@ The **League of Legends Champions Explorer** is a React-based web application th
 - **Search Functionality**: Quickly find a champion by typing their name in the search bar.
 - **Pagination**: The list of champions is divided into pages for easy navigation. You can switch between pages using the pagination controls.
 - **Champion Statistics Popup**: Click on any champion's image to view detailed statistics, including attack power, defense, magic, and more. The popup appears with a beautiful sliding effect from the top.
-- **Latest Data**: The app always fetches the latest data for champions using **Data Dragon**, ensuring that you get the most up-to-date information.
+- **Latest Data**: The app always fetches the latest data for champions using [**Data Dragon**](https://developer.riotgames.com/docs/lol#data-dragon), ensuring that you get the most up-to-date information.
 
 ## Installation
 
