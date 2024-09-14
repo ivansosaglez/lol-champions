@@ -1,0 +1,86 @@
+#root {
+  padding: 1rem 3rem;
+  text-align: center;
+}
+.lol-title {
+  font-family: sans-serif;
+}
+ul.champions-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+}
+
+.champions-list .card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  width: 300px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.champions-list .champion-image {
+  width: 100%;
+  height: auto;
+}
+
+.champions-list .card-content {
+  padding: 16px;
+}
+
+.champions-list .champion-name {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}
+
+.champions-list .champion-tags{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.champions-list .champion-description {
+  font-size: 1em;
+  color: #6b6b6b;
+  margin: 8px 0;
+}
+
+.champions-list .stats-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 12px;
+  background-color: #6157f0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.champions-list .stats-button:hover {
+  background-color: #4164ff;
+  color: #FFFFFF;
+}
+
+/** POP UP STYLES */
+
+.champion-popup .champion-image {
+  width: 100%;
+  height: auto;
+}
+
+.champion-popup ul {
+  list-style-type: none;
+  padding: 0;
+}
+.champion-popup .stats-popup {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  row-gap: 10px;
+}
+.champion-popup .atts-popup {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  row-gap: 15px;
+}
