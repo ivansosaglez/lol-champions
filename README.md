@@ -72,7 +72,7 @@ The **League of Legends Champions Explorer** is a React-based web application th
 
 ## Preview
 
-![App Screenshot](screenshot.png)
+![App Screenshot](./public/screenshot.png)
 
 ## License
 
