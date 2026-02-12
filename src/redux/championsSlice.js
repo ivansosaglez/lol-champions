@@ -1,19 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Función para obtener la última versión de Data Dragon
+// Function to get the latest Data Dragon version
 const getLatestVersion = async () => {
-  const versionResponse = await axios.get('https://ddragon.leagueoflegends.com/api/versions.json');
-  return versionResponse.data[0]; // La primera versión en el array es la más reciente
+  const versionResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/versions.json`);
+  return versionResponse.data[0]; // The first version in the array is the most recent
 };
 
-// Definimos una acción asíncrona para obtener los campeones desde la API
+// Define an async action to fetch champions from the API
 export const fetchChampions = createAsyncThunk(
   'champions/fetchChampions',
   async () => {
-    const latestVersion = await getLatestVersion(); // Obtenemos la última versión
-    const response = await axios.get(`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/en_US/champion.json`);
-    return response.data.data; // Retornamos los campeones del objeto 'data'
+    const latestVersion = await getLatestVersion(); // Get the latest version
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cdn/${latestVersion}/data/en_US/champion.json`);
+    return response.data.data; // Return champions from the 'data' object
   }
 );
 
@@ -31,7 +31,7 @@ const championsSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchChampions.fulfilled, (state, action) => {
-        state.champions = Object.values(action.payload); // Convertimos el objeto en un array
+        state.champions = Object.values(action.payload); // Convert the object into an array
         state.loading = false;
       })
       .addCase(fetchChampions.rejected, (state, action) => {

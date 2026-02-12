@@ -3,26 +3,19 @@ import React from 'react';
 const Pagination = ({ championsPerPage, totalChampions, paginate, currentPage }) => {
   const pageNumbers = [];
 
-  // Calcular el número total de páginas
+  // Calculate total page numbers
   for (let i = 1; i <= Math.ceil(totalChampions / championsPerPage); i++) {
     pageNumbers.push(i);
   }
 
   return (
-    <nav>
-      <ul style={{ display: 'flex', listStyle: 'none', justifyContent: 'center' }}>
+    <nav className="pagination-nav">
+      <ul className="pagination-list">
         {pageNumbers.map((number) => (
-          <li key={number} style={{ margin: '0 10px' }}>
+          <li key={number}>
             <button
               onClick={() => paginate(number)}
-              style={{
-                padding: '10px',
-                backgroundColor: currentPage === number ? '#007bff' : '#fff',
-                color: currentPage === number ? '#fff' : '#007bff',
-                border: '1px solid #007bff',
-                borderRadius: '5px',
-                cursor: 'pointer',
-              }}
+              className={`pagination-btn ${currentPage === number ? 'active' : ''}`}
             >
               {number}
             </button>
